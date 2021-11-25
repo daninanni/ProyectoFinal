@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>matemática</title>
+
+    <link href="/assets/css/bootstrap.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="/assets/css/estilomates.css">
+    <link href="https://fonts.googleapis.com/css2?family=Aclonica&display=swap" rel="stylesheet">
+
+
+  </head>
+
+{{> header}}      
+
+  <header class="header">
+      <h1 class="titulo">matemática</h1>
+    </header>
+
+<div class="container p-1">
+    <h2 class="tareasdisponibles">tareas disponibles:</h2>
+    
+    
+    <table class="table table-striped" id="mytable">               <!-- **1  ver index.js-->
+            <thead id="actarea">
+                <th>  AÑO </th>
+                <th>  CURSO  </th>
+                <th>  TAREA </th>
+            </thead>
+        <tbody>
+           {{#each results}}
+        <tr>
+            <td>{{year}}</td>
+            <td>{{curso}}</td>
+            <td>{{tarea}}</td>
+            <td><button class="btn btn-dark" disabled>descargar</button></td> <!-- no hace nada porque mi base de datos es de texto, no de archivos :(  -->
+                                                                              <!-- tampoco hay una forma de borrar los archivos subidos porque los mocosos son maliciosos a veces y seguro van a borrar trabajos que otros chicos hayas subido...-->    
+        </tr> 
+           {{/each}}
+        </tbody>
+
+    </table>
+</div>
+
+<!--  MODAL AGREGAR TAREA  -->
+
+<form action="/save" method="post">     
+      <div class="modal fade" id="myModalAdd" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+
+                <div class="modal-header"><h5 class="modal-title" id="exampleModalLabel">Agregar tarea</h5>
+                   <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                </div>
+
+                <div class="modal-body">
+                  <div class="form-group">
+                    <input type="text" name="year" class="form-control" placeholder="año de cursado..." required>
+                  </div>
+                  <div class="form-group">
+                    <input type="text" name="curso" class="form-control" placeholder="en qué curso estás..." required>
+                  </div>
+                  <div class="form-group">
+                    <input type="text" name="tarea" class="form-control" placeholder="título o descripción de la tarea..." required>
+                  </div>
+              <button type="file" class="btn btn-dark">Browse</button>   <!-- este boton hace cosas raras, como que agrega a la lista otra tarea cuando no deberia-->
+                </div>
+
+                <div class="modal-footer">
+                   <button type="button" class="btn btn-dark" data-dismiss="modal">me arrepentí</button>
+                   <button type="submit" class="btn btn-dark">SUBIR TAREA</button>
+                </div>
+            </div>
+         </div>
+      </div>
+</form>
+
+<button class="btn btn-warning" data-toggle="modal" data-target="#myModalAdd">Agregar tarea</button>
+
+<div class="clearfix"><h3 class="texto">
+    No seas rata! Compartí tus trabajos que entre todos nos hacemos la vida más fácil !!!</h3>
+</div>
+
+
+<script src="/assets/js/jquery-3.3.1.js"></script>
+<script src="/assets/js/bootstrap.js"></script>
+
+
+</body>
+
+</html>
