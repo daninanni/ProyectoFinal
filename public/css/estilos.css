@@ -5,7 +5,7 @@
 }
 
 .header{
-    background-color: rgb(255, 0, 0);
+    background-color: rgb(255, 255, 255);
     padding: 1rem;
     position: relative;
     width: 100%;
@@ -160,7 +160,7 @@
 .texto1 {
     display: block;
     width: 50%;
-    background-color: rgb(64, 0, 255);
+    background-color: rgb(255, 255, 255);
     margin-inline: auto;
 }
 
@@ -170,13 +170,11 @@
 
 .texto11 {
     display: flex;
-    background-image: url(../assets/svg/bgtexto1.svg);
-    background-size: 100%vw;
-    background-repeat: no-repeat;
-    margin-inline: auto;
+    margin-left: 20rem;
+    margin-right: 20rem;
     justify-content: center;
     font-family:  'Aclonica', sans-serif, Arial, Helvetica, sans-serif ;
-    padding: 3rem;
+    
 }
 
 .texto11:hover{
@@ -187,8 +185,8 @@
 animation: rectangulo1 0.3s ease-out forwards;
 transform-origin:center ;
 opacity: 0;
-background-color: blueviolet;
-transform: scale(18,18)
+background-color: rgb(255, 255, 255);
+transform: scale(20,20)
 }
 
 @keyframes rectangulo1 {
