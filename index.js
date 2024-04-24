@@ -13,6 +13,10 @@ app.set ('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');                          //motor de plantilla//
 
 
+app.use(express.static(__dirname + '/public'));
+ 
+  
+
 //  MIDDLEWARE (fns de express)  //
 app.use (express.json());
 app.use(express.urlencoded({extended:false}));
@@ -23,9 +27,6 @@ app.use(require ('./router/router'));
 //  HANDLERSBARS (acceso a las vistas)  //
                                              
 hbs.registerPartials (__dirname + "/views/partials/")
-
-
-
 
 
 

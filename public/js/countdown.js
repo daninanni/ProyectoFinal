@@ -1,7 +1,7 @@
 //cuenta regresiva
 
 
-    simplyCountdown('#cuenta', {
+  simplyCountdown('#cuenta', {
         year: 2021, // required
         month: 12, // required
         day: 15, // required
@@ -18,7 +18,7 @@
         inline: true, //set to true to get an inline basic countdown like : 24 days, 4 hours, 2 minutes, 5 seconds
         enableUtc: true, //Use UTC or not - default : false
         onEnd: function() { 
-            alert ("BUENA SUERTE EN TUS EXÁMENES !!!")
+ //           alert ("BUENA SUERTE EN TUS EXÁMENES !!!")
             return; }, //Callback on countdown end, put your own function here
         refresh: 1000, // default refresh every 1s
         sectionClass: 'simply-section', //section css class

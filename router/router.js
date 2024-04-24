@@ -25,6 +25,8 @@ router.get('/',(req , res)=>{
     res.render('index')
    });
 
+
+
 router.get('/mates', (req, res) => {
     let sql= "SELECT * FROM matematica";
 let query = conn.query(sql, (err, results)=> {
@@ -36,7 +38,7 @@ let query = conn.query(sql, (err, results)=> {
   });
 
 
- //para cuadno vaya agregando otras materias// 
+ //para cuando vaya agregando otras materias// 
 //   router.get('/literatura', (req, res) => {
 //     let sql= "SELECT * FROM literatura";
 // let query = conn.query(sql, (err, results)=> {
